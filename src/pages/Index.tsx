@@ -95,9 +95,9 @@ const Index = () => {
                 variants={fadeUp}
                 className="text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white leading-[1.1] tracking-tight"
               >
-                Learn Without Limits
-{" "}
+                Learn Without{" "}
                 <span className="text-secondary relative inline-block">
+                  Limits
                   <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <motion.path
                       d="M2 8C50 2 150 2 198 8"
@@ -113,15 +113,17 @@ const Index = () => {
                 </span>
               </motion.h1>
               <motion.p variants={fadeUp} className="text-lg lg:text-xl text-white/80 max-w-lg leading-relaxed">
- < className="text-white font-medium">  Start, switch, or advance your career with thousands of courses from expert instructors
+                Start, switch, or advance your career with <span className="text-white font-medium">thousands of courses</span> from expert instructors.
               </motion.p>
+              <motion.div variants={fadeUp} className="flex flex-wrap gap-4 pt-2">
                 <Button asChild className="bg-secondary hover:bg-secondary/90 text-secondary-foreground rounded-full px-8 py-6 text-base shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
                   <Link to="/courses">Explore Courses <ArrowRight className="ml-2 h-4 w-4" /></Link>
-             <Button asChild className="bg-gray-200 text-black hover:bg-gray-300"></Button>
-               <Link to="/login">Join for Free</Link>
-
-</Button>
+                </Button>
+                <Button asChild variant="outline" className="rounded-full px-8 py-6 text-base border-white/40 text-white hover:bg-white hover:text-foreground hover:-translate-y-0.5 transition-all duration-300 backdrop-blur-sm">
+                  <Link to="/login">Join for Free</Link>
+                </Button>
               </motion.div>
+            </motion.div>
             <motion.div
               className="flex-1 w-full"
               initial={{ opacity: 0, x: 40, scale: 0.95 }}
