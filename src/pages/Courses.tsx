@@ -4,16 +4,23 @@ import CourseCard from "@/components/CourseCard";
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
 import { motion } from "framer-motion";
+
 import course1 from "@/assets/course-1.jpg";
 import course2 from "@/assets/course-2.jpg";
 import course3 from "@/assets/course-3.jpg";
 import course4 from "@/assets/course-4.jpg";
+import headerBg from "@/assets/banner-about.jpg"; // header background image
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
   visible: (i: number = 0) => ({
-    opacity: 1, y: 0,
-    transition: { duration: 0.6, delay: i * 0.1, ease: [0.25, 0.46, 0.45, 0.94] as const },
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      delay: i * 0.1,
+      ease: [0.25, 0.46, 0.45, 0.94] as const,
+    },
   }),
 };
 
@@ -37,23 +44,40 @@ const Courses = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
+{/* ✅ Hero Banner with Background Image */}
+      <section
+        className="min-h-[60vh] md:min-h-[80vh] flex items-center justify-center bg-cover bg-center bg-no-repeat relative"
+        style={{ backgroundImage: `url(${headerBg})` }}
+      >
+        {/* dark overlay */}
+        <div className="absolute inset-0 bg-black/40"></div>
 
-      {/* Header */}
-      <section className="bg-accent py-16">
         <motion.div
-          className="container mx-auto px-4 text-center"
-          initial="hidden" animate="visible" variants={stagger}
+          className="container mx-auto px-4 text-center relative z-10"
+          initial="hidden"
+          animate="visible"
+          variants={stagger}
         >
-          <motion.h1 variants={fadeUp} className="text-4xl font-bold text-foreground mb-4">All Courses</motion.h1>
-          <motion.p variants={fadeUp} className="text-muted-foreground mb-8 max-w-lg mx-auto">Browse our full catalog and find the perfect course for you</motion.p>
-          <motion.div variants={fadeUp} className="relative max-w-md mx-auto">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-            <Input placeholder="Search courses..." className="pl-10 rounded-full bg-card border-border" />
-          </motion.div>
+          <motion.h1
+            variants={fadeUp}
+            className="text-4xl md:text-5xl font-bold text-white mb-4"
+          >
+            All Courses
+          </motion.h1>
+
+          <motion.p
+            variants={fadeUp}
+                      
+
+            className="text-gray-200 max-w-lg mx-auto text-lg"
+          >
+            Browse our full catalog and find the perfect course for you
+            </motion.p>
         </motion.div>
       </section>
 
-      {/* Grid */}
+    
+      {/* Courses Grid */}
       <section className="py-16 bg-background flex-1">
         <div className="container mx-auto px-4">
           <motion.div

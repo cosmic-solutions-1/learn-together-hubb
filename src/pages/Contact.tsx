@@ -7,6 +7,10 @@ import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import { motion } from "framer-motion";
 import contactOffice from "@/assets/contact-office.jpg";
 
+// ✅ add your banner image here
+import headerBg from "@/assets/banner-courses.jpg";
+
+
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
   visible: (i: number = 0) => ({
@@ -49,17 +53,38 @@ const Contact = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
+          {/* ✅ Hero Banner with Background Image */}
+      <section
+        className="min-h-[60vh] md:min-h-[80vh] flex items-center justify-center bg-cover bg-center bg-no-repeat relative"
+        style={{ backgroundImage: `url(${headerBg})` }}
+      >
+        {/* dark overlay */}
+        <div className="absolute inset-0 bg-black/40"></div>
 
-      {/* Hero */}
-      <section className="bg-accent py-16">
         <motion.div
-          className="container mx-auto px-4 text-center"
-          initial="hidden" animate="visible" variants={stagger}
+          className="container mx-auto px-4 text-center relative z-10"
+          initial="hidden"
+          animate="visible"
+          variants={stagger}
         >
-          <motion.h1 variants={fadeUp} className="text-4xl font-bold text-foreground mb-4">Contact Us</motion.h1>
-          <motion.p variants={fadeUp} className="text-muted-foreground max-w-lg mx-auto">We'd love to hear from you. Reach out and we'll get back to you within 24 hours.</motion.p>
+          <motion.h1
+            variants={fadeUp}
+            className="text-4xl md:text-5xl font-bold text-white mb-4"
+          >
+            Contact Us
+          </motion.h1>
+
+          <motion.p
+            variants={fadeUp}
+                      
+
+            className="text-gray-200 max-w-lg mx-auto text-lg"
+          >
+          We'd love to hear from you. Reach out and we'll get back to you within 24 hours           </motion.p>
         </motion.div>
       </section>
+
+    
 
       {/* Contact section */}
       <section className="py-20 bg-background flex-1">
