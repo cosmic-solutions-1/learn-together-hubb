@@ -44,7 +44,6 @@ const Login = () => {
             {isLogin ? "Welcome back!" : "Create Account"}
           </h1>
           <p className="text-muted-foreground mb-8">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
           </p>
 
           {/* Tabs */}
